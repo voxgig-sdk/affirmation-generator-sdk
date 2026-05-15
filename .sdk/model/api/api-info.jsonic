@@ -1,0 +1,23 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      contact: {
+        url: "https://www.affirmations.dev/"
+      }
+      description: "This API provides inspirational affirmations to boost positivity and self-esteem. Users can retrieve random affirmations to enhance their mental wellness and motivation."
+      servers: [
+        {
+          description: "Production server"
+          url: "https://www.affirmations.dev"
+        }
+      ]
+      title: "Affirmation Generator API"
+      version: "1.0.0"
+    }
+  }
+}
+
+}

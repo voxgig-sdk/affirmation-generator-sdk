@@ -1,0 +1,34 @@
+# Entity: get_random_affirmation
+
+main: kit: entity: get_random_affirmation: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "affirmation"
+      req: true
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "get_random_affirmation"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          method: "GET"
+          orig: "/"
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

@@ -1,0 +1,22 @@
+{
+  "existing": {
+    "get_random_affirmation": {
+      "GET_RANDOM_AFFIRMATION00": {
+        "affirmation": "sa"
+      },
+      "GET_RANDOM_AFFIRMATION01": {
+        "affirmation": "s14"
+      },
+      "GET_RANDOM_AFFIRMATION02": {
+        "affirmation": "s1e"
+      }
+    }
+  },
+  "new": {
+    "get_random_affirmation": {
+      "get_random_affirmation_ref01": {
+        "affirmation": "s28"
+      }
+    }
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Affirmation Generator API",
+    "description": "This API provides inspirational affirmations to boost positivity and self-esteem. Users can retrieve random affirmations to enhance their mental wellness and motivation.",
+    "version": "1.0.0",
+    "contact": {
+      "url": "https://www.affirmations.dev/"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://www.affirmations.dev",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "summary": "Get a random affirmation",
+        "description": "Retrieves a random inspirational affirmation to boost positivity and self-esteem.",
+        "operationId": "getRandomAffirmation",
+        "responses": {
+          "200": {
+            "description": "Successful response with a random affirmation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Affirmation"
+                },
+                "example": {
+                  "affirmation": "You know more than you think"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Affirmations"
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Affirmation": {
+        "type": "object",
+        "properties": {
+          "affirmation": {
+            "type": "string",
+            "description": "An inspirational affirmation message",
+            "example": "You know more than you think"
+          }
+        },
+        "required": [
+          "affirmation"
+        ]
+      },
+      "Error": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Error message"
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Affirmations",
+      "description": "Operations related to retrieving inspirational affirmations"
+    }
+  ]
+}
