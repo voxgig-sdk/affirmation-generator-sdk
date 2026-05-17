@@ -1,10 +1,10 @@
 package voxgigaffirmationgeneratorsdk
 
 import (
-	"github.com/voxgig-sdk/affirmation-generator-sdk/core"
-	"github.com/voxgig-sdk/affirmation-generator-sdk/entity"
-	"github.com/voxgig-sdk/affirmation-generator-sdk/feature"
-	_ "github.com/voxgig-sdk/affirmation-generator-sdk/utility"
+	"github.com/voxgig-sdk/affirmation-generator-sdk/go/core"
+	"github.com/voxgig-sdk/affirmation-generator-sdk/go/entity"
+	"github.com/voxgig-sdk/affirmation-generator-sdk/go/feature"
+	_ "github.com/voxgig-sdk/affirmation-generator-sdk/go/utility"
 )
 
 // Type aliases preserve external API.

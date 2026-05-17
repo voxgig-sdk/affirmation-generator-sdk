@@ -4,7 +4,7 @@ import (
 	"log/slog"
 	"os"
 
-	"github.com/voxgig-sdk/affirmation-generator-sdk/core"
+	"github.com/voxgig-sdk/affirmation-generator-sdk/go/core"
 )
 
 type LogFeature struct {

@@ -9,10 +9,10 @@ import (
 	"testing"
 	"time"
 
-	sdk "github.com/voxgig-sdk/affirmation-generator-sdk"
-	"github.com/voxgig-sdk/affirmation-generator-sdk/core"
+	sdk "github.com/voxgig-sdk/affirmation-generator-sdk/go"
+	"github.com/voxgig-sdk/affirmation-generator-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/affirmation-generator-sdk/go/utility/struct"
 )
 
 func TestGetRandomAffirmationEntity(t *testing.T) {

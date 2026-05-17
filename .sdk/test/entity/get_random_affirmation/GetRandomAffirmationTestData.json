@@ -2,13 +2,16 @@
   "existing": {
     "get_random_affirmation": {
       "GET_RANDOM_AFFIRMATION00": {
-        "affirmation": "sa"
+        "affirmation": "sa",
+        "id": "GET_RANDOM_AFFIRMATION00"
       },
       "GET_RANDOM_AFFIRMATION01": {
-        "affirmation": "s14"
+        "affirmation": "s14",
+        "id": "GET_RANDOM_AFFIRMATION01"
       },
       "GET_RANDOM_AFFIRMATION02": {
-        "affirmation": "s1e"
+        "affirmation": "s1e",
+        "id": "GET_RANDOM_AFFIRMATION02"
       }
     }
   },
