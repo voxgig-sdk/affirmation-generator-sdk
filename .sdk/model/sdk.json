@@ -16,7 +16,15 @@
           }
         ],
         "title": "Affirmation Generator API",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "tagline": "Fetch a random positive affirmation as JSON, no auth required",
+        "homepage": "https://www.affirmations.dev",
+        "docs_url": "https://www.affirmations.dev",
+        "about_md": "[Affirmations.dev](https://www.affirmations.dev) is a tiny, free public API that returns a single random affirmation — a short, positive statement intended to boost motivation, self-esteem, and mental wellness.\n\nWhat you get from the API:\n\n- A random affirmation string returned as a JSON object on each request.\n- A single HTTP `GET` endpoint at the service root (`https://www.affirmations.dev/`).\n- Plain, unauthenticated access — no API key or signup is required.\n\nThe service is lightweight and intended for casual integrations such as widgets, daily-reminder apps, chatbots, and learning projects. No published rate limits, terms, or licence are documented on the homepage; treat the data as informally provided and avoid abusive request volumes.",
+        "entity_desc": {
+          "get_random_affirmation": "Retrieves a single random affirmation as a JSON object from the service root (`GET /`)."
+        },
+        "auth": false
       },
       "config": {
         "auth": {
@@ -24,7 +32,15 @@
         },
         "headers": {
           "content-type": "application/json"
-        }
+        },
+        "docs_order": [
+          "ts",
+          "py",
+          "php",
+          "go",
+          "rb",
+          "lua"
+        ]
       },
       "entity": {
         "get_random_affirmation": {

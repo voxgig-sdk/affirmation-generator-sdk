@@ -38,10 +38,6 @@ class Config {
   options = {
     base: 'https://www.affirmations.dev',
 
-    auth: {
-      prefix: 'Bearer',
-    },
-
     headers: {
       "content-type": "application/json"
     },

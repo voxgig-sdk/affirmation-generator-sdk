@@ -117,7 +117,6 @@ func get_random_affirmationBasicSetup(extra map[string]any) *entityTestSetup {
 		"AFFIRMATIONGENERATOR_TEST_GET_RANDOM_AFFIRMATION_ENTID": idmap,
 		"AFFIRMATIONGENERATOR_TEST_LIVE":      "FALSE",
 		"AFFIRMATIONGENERATOR_TEST_EXPLAIN":   "FALSE",
-		"AFFIRMATIONGENERATOR_APIKEY":         "NONE",
 	})
 
 	idmapResolved := core.ToMapAny(env["AFFIRMATIONGENERATOR_TEST_GET_RANDOM_AFFIRMATION_ENTID"])
@@ -128,7 +127,6 @@ func get_random_affirmationBasicSetup(extra map[string]any) *entityTestSetup {
 	if env["AFFIRMATIONGENERATOR_TEST_LIVE"] == "TRUE" {
 		mergedOpts := vs.Merge([]any{
 			map[string]any{
-				"apikey": env["AFFIRMATIONGENERATOR_APIKEY"],
 			},
 			extra,
 		})

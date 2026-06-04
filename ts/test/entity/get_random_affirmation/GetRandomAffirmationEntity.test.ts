@@ -113,7 +113,6 @@ function basicSetup(extra?: any) {
     'AFFIRMATION_GENERATOR_TEST_GET_RANDOM_AFFIRMATION_ENTID': idmap,
     'AFFIRMATION_GENERATOR_TEST_LIVE': 'FALSE',
     'AFFIRMATION_GENERATOR_TEST_EXPLAIN': 'FALSE',
-    'AFFIRMATION_GENERATOR_APIKEY': 'NONE',
   })
 
   idmap = env['AFFIRMATION_GENERATOR_TEST_GET_RANDOM_AFFIRMATION_ENTID']
@@ -123,7 +122,6 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new AffirmationGeneratorSDK(merge([
       {
-        apikey: env.AFFIRMATION_GENERATOR_APIKEY,
       },
       extra
     ]))
