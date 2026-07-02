@@ -91,6 +91,7 @@ def _get_random_affirmation_basic_setup(extra):
         "AFFIRMATIONGENERATOR_TEST_GET_RANDOM_AFFIRMATION_ENTID": idmap,
         "AFFIRMATIONGENERATOR_TEST_LIVE": "FALSE",
         "AFFIRMATIONGENERATOR_TEST_EXPLAIN": "FALSE",
+        "AFFIRMATIONGENERATOR_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -101,6 +102,7 @@ def _get_random_affirmation_basic_setup(extra):
     if env.get("AFFIRMATIONGENERATOR_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
+                "apikey": env.get("AFFIRMATIONGENERATOR_APIKEY"),
             },
             extra or {},
         ])

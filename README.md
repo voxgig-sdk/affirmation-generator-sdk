@@ -1,20 +1,8 @@
 # AffirmationGenerator SDK
 
-Fetch a random positive affirmation as JSON, no auth required
+Affirmation Generator API client, generated from the OpenAPI spec.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
-
-## About Affirmation Generator API
-
-[Affirmations.dev](https://www.affirmations.dev) is a tiny, free public API that returns a single random affirmation — a short, positive statement intended to boost motivation, self-esteem, and mental wellness.
-
-What you get from the API:
-
-- A random affirmation string returned as a JSON object on each request.
-- A single HTTP `GET` endpoint at the service root (`https://www.affirmations.dev/`).
-- Plain, unauthenticated access — no API key or signup is required.
-
-The service is lightweight and intended for casual integrations such as widgets, daily-reminder apps, chatbots, and learning projects. No published rate limits, terms, or licence are documented on the homepage; treat the data as informally provided and avoid abusive request volumes.
 
 ## Try it
 
@@ -48,27 +36,31 @@ gem install affirmation-generator-sdk
 luarocks install affirmation-generator-sdk
 ```
 
-## 30-second quickstart
+## Quickstart
 
 ### TypeScript
 
 ```ts
 import { AffirmationGeneratorSDK } from 'affirmation-generator'
 
-const client = new AffirmationGeneratorSDK({})
+const client = new AffirmationGeneratorSDK({
+  apikey: process.env.AFFIRMATION-GENERATOR_APIKEY,
+})
 
+// Load getrandomaffirmation data
+const getrandomaffirmation = await client.GetRandomAffirmation().load({})
+console.log(getrandomaffirmation.data)
 ```
 
-See the [TypeScript README](ts/README.md) for the
-full guide, or scroll down for the same example in other languages.
+See the [TypeScript README](ts/README.md) for the full guide.
 
-## What's in the box
+## Surfaces
 
-| Surface | Use it for | Path |
-| --- | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | App integration | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
-| **CLI** | Scripts, CI, ops, one-off API calls | `go-cli/` |
-| **MCP server** | AI agents (Claude, Cursor, Cline) | `go-mcp/` |
+| Surface | Path |
+| --- | --- |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
 
 ## Use it from an AI agent (MCP)
 
@@ -98,7 +90,7 @@ The API exposes one entity:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **GetRandomAffirmation** | Retrieves a single random affirmation as a JSON object from the service root (`GET /`). | `/` |
+| **GetRandomAffirmation** |  | `/` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -108,15 +100,17 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
+import os
 from affirmationgenerator_sdk import AffirmationGeneratorSDK
 
-client = AffirmationGeneratorSDK({})
+client = AffirmationGeneratorSDK({
+    "apikey": os.environ.get("AFFIRMATION-GENERATOR_APIKEY"),
+})
 
 
 # Load a specific getrandomaffirmation
-getrandomaffirmation, err = client.GetRandomAffirmation(None).load(
-    {"id": "example_id"}, None
-)
+getrandomaffirmation, err = client.GetRandomAffirmation().load({"id": "example_id"})
+print(getrandomaffirmation)
 ```
 
 ### PHP
@@ -125,13 +119,14 @@ getrandomaffirmation, err = client.GetRandomAffirmation(None).load(
 <?php
 require_once 'affirmationgenerator_sdk.php';
 
-$client = new AffirmationGeneratorSDK([]);
+$client = new AffirmationGeneratorSDK([
+    "apikey" => getenv("AFFIRMATION-GENERATOR_APIKEY"),
+]);
 
 
 // Load a specific getrandomaffirmation
-[$getrandomaffirmation, $err] = $client->GetRandomAffirmation(null)->load(
-    ["id" => "example_id"], null
-);
+[$getrandomaffirmation, $err] = $client->GetRandomAffirmation()->load(["id" => "example_id"]);
+print_r($getrandomaffirmation);
 ```
 
 ### Golang
@@ -139,8 +134,13 @@ $client = new AffirmationGeneratorSDK([]);
 ```go
 import sdk "github.com/voxgig-sdk/affirmation-generator-sdk/go"
 
-client := sdk.NewAffirmationGeneratorSDK(map[string]any{})
+client := sdk.NewAffirmationGeneratorSDK(map[string]any{
+    "apikey": os.Getenv("AFFIRMATION-GENERATOR_APIKEY"),
+})
 
+// Load getrandomaffirmation data
+getrandomaffirmation, err := client.GetRandomAffirmation(nil).Load(map[string]any{}, nil)
+fmt.Println(getrandomaffirmation)
 ```
 
 ### Ruby
@@ -148,13 +148,14 @@ client := sdk.NewAffirmationGeneratorSDK(map[string]any{})
 ```ruby
 require_relative "AffirmationGenerator_sdk"
 
-client = AffirmationGeneratorSDK.new({})
+client = AffirmationGeneratorSDK.new({
+  "apikey" => ENV["AFFIRMATION-GENERATOR_APIKEY"],
+})
 
 
 # Load a specific getrandomaffirmation
-getrandomaffirmation, err = client.GetRandomAffirmation(nil).load(
-  { "id" => "example_id" }, nil
-)
+getrandomaffirmation, err = client.GetRandomAffirmation().load({ "id" => "example_id" })
+puts getrandomaffirmation
 ```
 
 ### Lua
@@ -162,13 +163,14 @@ getrandomaffirmation, err = client.GetRandomAffirmation(nil).load(
 ```lua
 local sdk = require("affirmation-generator_sdk")
 
-local client = sdk.new({})
+local client = sdk.new({
+  apikey = os.getenv("AFFIRMATION-GENERATOR_APIKEY"),
+})
 
 
 -- Load a specific getrandomaffirmation
-local getrandomaffirmation, err = client:GetRandomAffirmation(nil):load(
-  { id = "example_id" }, nil
-)
+local getrandomaffirmation, err = client:GetRandomAffirmation():load({ id = "example_id" })
+print(getrandomaffirmation)
 ```
 
 ## Unit testing in offline mode
@@ -187,25 +189,21 @@ const result = await client.GetRandomAffirmation().load({ id: 'test01' })
 ### Python
 
 ```python
-client = AffirmationGeneratorSDK.test(None, None)
-result, err = client.GetRandomAffirmation(None).load(
-    {"id": "test01"}, None
-)
+client = AffirmationGeneratorSDK.test()
+result, err = client.GetRandomAffirmation().load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
-$client = AffirmationGeneratorSDK::test(null, null);
-[$result, $err] = $client->GetRandomAffirmation(null)->load(
-    ["id" => "test01"], null
-);
+$client = AffirmationGeneratorSDK::test();
+[$result, $err] = $client->GetRandomAffirmation()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
-client := sdk.TestSDK(nil, nil)
+client := sdk.Test()
 result, err := client.GetRandomAffirmation(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
@@ -214,19 +212,15 @@ result, err := client.GetRandomAffirmation(nil).Load(
 ### Ruby
 
 ```ruby
-client = AffirmationGeneratorSDK.test(nil, nil)
-result, err = client.GetRandomAffirmation(nil).load(
-  { "id" => "test01" }, nil
-)
+client = AffirmationGeneratorSDK.test
+result, err = client.GetRandomAffirmation().load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
-local client = sdk.test(nil, nil)
-local result, err = client:GetRandomAffirmation(nil):load(
-  { id = "test01" }, nil
-)
+local client = sdk.test()
+local result, err = client:GetRandomAffirmation():load({ id = "test01" })
 ```
 
 ## How it works
@@ -330,10 +324,6 @@ local result, err = client:direct({
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
-
-## Using the Affirmation Generator API
-
-- Upstream: [https://www.affirmations.dev](https://www.affirmations.dev)
 
 ---
 

@@ -99,12 +99,14 @@ func get_random_affirmationDirectSetup(mockres any) *get_random_affirmationDirec
 	env := envOverride(map[string]any{
 		"AFFIRMATIONGENERATOR_TEST_GET_RANDOM_AFFIRMATION_ENTID": map[string]any{},
 		"AFFIRMATIONGENERATOR_TEST_LIVE":    "FALSE",
+		"AFFIRMATIONGENERATOR_APIKEY":       "NONE",
 	})
 
 	live := env["AFFIRMATIONGENERATOR_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
+			"apikey": env["AFFIRMATIONGENERATOR_APIKEY"],
 		}
 		client := sdk.NewAffirmationGeneratorSDK(mergedOpts)
 
