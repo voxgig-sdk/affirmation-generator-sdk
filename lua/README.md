@@ -10,7 +10,7 @@ The Lua SDK for the AffirmationGenerator API — an entity-oriented client using
 
 ## Install
 ```bash
-luarocks install affirmation-generator-sdk
+luarocks install voxgig-sdk-affirmation-generator
 ```
 
 If the module is not yet published, add the source directory to

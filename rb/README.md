@@ -10,13 +10,13 @@ The Ruby SDK for the AffirmationGenerator API — an entity-oriented client usin
 
 ## Install
 ```bash
-gem install affirmation-generator-sdk
+gem install voxgig-sdk-affirmation-generator
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "affirmation-generator-sdk"
+gem "voxgig-sdk-affirmation-generator"
 ```
 
 Then run:

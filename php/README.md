@@ -10,7 +10,7 @@ The PHP SDK for the AffirmationGenerator API — an entity-oriented client using
 
 ## Install
 ```bash
-composer require voxgig/affirmation-generator-sdk
+composer require voxgig-sdk/affirmation-generator
 ```
 
 

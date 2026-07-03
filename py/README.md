@@ -10,7 +10,7 @@ The Python SDK for the AffirmationGenerator API — an entity-oriented client fo
 
 ## Install
 ```bash
-pip install affirmation-generator-sdk
+pip install voxgig-sdk-affirmation-generator
 ```
 
 Or install from source:

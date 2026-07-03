@@ -10,7 +10,7 @@ The TypeScript SDK for the AffirmationGenerator API — a type-safe, entity-orie
 
 ## Install
 ```bash
-npm install affirmation-generator
+npm install @voxgig-sdk/affirmation-generator
 ```
 ## Tutorial: your first API call
 
