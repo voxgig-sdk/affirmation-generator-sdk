@@ -9,12 +9,9 @@ The Lua SDK for the AffirmationGenerator API — an entity-oriented client using
 
 
 ## Install
-```bash
-luarocks install voxgig-sdk-affirmation-generator
-```
-
-If the module is not yet published, add the source directory to
-your `LUA_PATH`:
+This package is not yet published to LuaRocks. Install it from the
+GitHub release tag (`lua/vX.Y.Z`, see [Releases](https://github.com/voxgig-sdk/affirmation-generator-sdk/releases)),
+or add the source directory to your `LUA_PATH`:
 
 ```bash
 export LUA_PATH="path/to/lua/?.lua;path/to/lua/?/init.lua;;"
@@ -31,15 +28,13 @@ loading a specific record.
 ```lua
 local sdk = require("affirmation-generator_sdk")
 
-local client = sdk.new({
-  apikey = os.getenv("AFFIRMATION-GENERATOR_APIKEY"),
-})
+local client = sdk.new()
 ```
 
 ### 3. Load a getrandomaffirmation
 
 ```lua
-local result, err = client:GetRandomAffirmation():load({ id = "example_id" })
+local result, err = client:getrandomaffirmation():load({ id = "example_id" })
 if err then error(err) end
 print(result)
 ```
@@ -87,7 +82,7 @@ Create a mock client for unit testing — no server required:
 ```lua
 local client = sdk.test()
 
-local result, err = client:AffirmationGenerator():load({ id = "test01" })
+local result, err = client:getrandomaffirmation():load({ id = "test01" })
 -- result contains mock response data
 ```
 
@@ -120,8 +115,7 @@ local client = sdk.new({
 Create a `.env.local` file at the project root:
 
 ```
-AFFIRMATION-GENERATOR_TEST_LIVE=TRUE
-AFFIRMATION-GENERATOR_APIKEY=<your-key>
+AFFIRMATION_GENERATOR_TEST_LIVE=TRUE
 ```
 
 Then run:
@@ -144,7 +138,6 @@ Creates a new SDK client.
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `string` | API key for authentication. |
 | `base` | `string` | Base URL of the API server. |
 | `prefix` | `string` | URL path prefix prepended to all requests. |
 | `suffix` | `string` | URL path suffix appended to all requests. |
@@ -221,7 +214,7 @@ API path: `/`
 
 ### GetRandomAffirmation
 
-Create an instance: `const get_random_affirmation = client.GetRandomAffirmation()`
+Create an instance: `const get_random_affirmation = client.get_random_affirmation`
 
 #### Operations
 
@@ -238,7 +231,7 @@ Create an instance: `const get_random_affirmation = client.GetRandomAffirmation(
 #### Example: Load
 
 ```ts
-const get_random_affirmation = await client.GetRandomAffirmation().load({ id: 'get_random_affirmation_id' })
+const get_random_affirmation = await client.get_random_affirmation.load({ id: 'get_random_affirmation_id' })
 ```
 
 
@@ -313,11 +306,11 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```lua
-local moon = client:Moon(nil)
-moon:load({ planet_id = "earth", id = "luna" }, nil)
+local getrandomaffirmation = client:getrandomaffirmation()
+getrandomaffirmation:load({ id = "example_id" })
 
--- moon:data_get() now returns the loaded moon data
--- moon:match_get() returns the last match criteria
+-- getrandomaffirmation:data_get() now returns the loaded getrandomaffirmation data
+-- getrandomaffirmation:match_get() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

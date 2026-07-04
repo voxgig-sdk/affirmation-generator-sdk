@@ -62,14 +62,12 @@ function get_random_affirmation_direct_setup(mockres)
   local env = runner.env_override({
     ["AFFIRMATIONGENERATOR_TEST_GET_RANDOM_AFFIRMATION_ENTID"] = {},
     ["AFFIRMATIONGENERATOR_TEST_LIVE"] = "FALSE",
-    ["AFFIRMATIONGENERATOR_APIKEY"] = "NONE",
   })
 
   local live = env["AFFIRMATIONGENERATOR_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {
-      apikey = env["AFFIRMATIONGENERATOR_APIKEY"],
     }
     local client = sdk.new(merged_opts)
     return {

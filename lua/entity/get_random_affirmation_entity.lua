@@ -79,6 +79,10 @@ end
 
 
 
+---@param reqmatch GetRandomAffirmationLoadMatch
+---@param ctrl? table
+---@return GetRandomAffirmation
+---@return string? err
 function GetRandomAffirmationEntity:load(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

@@ -49,8 +49,7 @@ class GetRandomAffirmationEntityTest extends TestCase
         // LOAD
         $get_random_affirmation_ref01_ent = $client->GetRandomAffirmation(null);
         $get_random_affirmation_ref01_match_dt0 = [];
-        [$get_random_affirmation_ref01_data_dt0_loaded, $err] = $get_random_affirmation_ref01_ent->load($get_random_affirmation_ref01_match_dt0, null);
-        $this->assertNull($err);
+        $get_random_affirmation_ref01_data_dt0_loaded = $get_random_affirmation_ref01_ent->load($get_random_affirmation_ref01_match_dt0, null);
         $this->assertNotNull($get_random_affirmation_ref01_data_dt0_loaded);
 
     }
@@ -85,7 +84,6 @@ function get_random_affirmation_basic_setup($extra)
         "AFFIRMATIONGENERATOR_TEST_GET_RANDOM_AFFIRMATION_ENTID" => $idmap,
         "AFFIRMATIONGENERATOR_TEST_LIVE" => "FALSE",
         "AFFIRMATIONGENERATOR_TEST_EXPLAIN" => "FALSE",
-        "AFFIRMATIONGENERATOR_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -97,7 +95,6 @@ function get_random_affirmation_basic_setup($extra)
     if ($env["AFFIRMATIONGENERATOR_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["AFFIRMATIONGENERATOR_APIKEY"],
             ],
             $extra ?? [],
         ]);

@@ -245,6 +245,9 @@ func (sdk *AffirmationGeneratorSDK) Direct(fetchargs map[string]any) (map[string
 }
 
 
+// GetRandomAffirmation returns a GetRandomAffirmation entity bound to this client.
+// Idiomatic usage: client.GetRandomAffirmation(nil).List(nil, nil) or
+// client.GetRandomAffirmation(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *AffirmationGeneratorSDK) GetRandomAffirmation(data map[string]any) AffirmationGeneratorEntity {
 	return NewGetRandomAffirmationEntityFunc(sdk, data)
 }

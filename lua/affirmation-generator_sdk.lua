@@ -244,6 +244,19 @@ end
 
 
 
+-- Idiomatic facade: client:get_random_affirmation():list() / client:get_random_affirmation():load({ id = ... })
+function AffirmationGeneratorSDK:get_random_affirmation(data)
+  local EntityMod = require("entity.get_random_affirmation_entity")
+  if data == nil then
+    if self._get_random_affirmation == nil then
+      self._get_random_affirmation = EntityMod.new(self, nil)
+    end
+    return self._get_random_affirmation
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:get_random_affirmation() instead.
 function AffirmationGeneratorSDK:GetRandomAffirmation(data)
   local EntityMod = require("entity.get_random_affirmation_entity")
   return EntityMod.new(self, data)

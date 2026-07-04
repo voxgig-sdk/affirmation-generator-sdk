@@ -18,7 +18,6 @@ Create a new SDK client instance.
 | Name | Type | Description |
 | --- | --- | --- |
 | `options` | `object` | SDK configuration options. |
-| `options.apikey` | `string` | API key for authentication. |
 | `options.base` | `string` | Base URL for API requests. |
 | `options.prefix` | `string` | URL prefix appended after base. |
 | `options.suffix` | `string` | URL suffix appended after path. |
@@ -110,7 +109,7 @@ Alias for `AffirmationGeneratorSDK.test()`.
 ## GetRandomAffirmationEntity
 
 ```ts
-const get_random_affirmation = client.GetRandomAffirmation()
+const get_random_affirmation = client.get_random_affirmation
 ```
 
 ### Fields
@@ -126,7 +125,7 @@ const get_random_affirmation = client.GetRandomAffirmation()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.GetRandomAffirmation().load({ id: 'get_random_affirmation_id' })
+const result = await client.get_random_affirmation.load({ id: 'get_random_affirmation_id' })
 ```
 
 ### Common Methods

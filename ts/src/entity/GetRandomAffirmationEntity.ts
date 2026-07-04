@@ -14,9 +14,13 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  GetRandomAffirmation,
+  GetRandomAffirmationLoadMatch,
+} from '../AffirmationGeneratorTypes'
 
 // TODO: needs Entity superclass
-class GetRandomAffirmationEntity extends AffirmationGeneratorEntityBase {
+class GetRandomAffirmationEntity extends AffirmationGeneratorEntityBase<GetRandomAffirmation> {
 
   constructor(client: AffirmationGeneratorSDK, entopts: any) {
     super(client, entopts)
@@ -32,7 +36,7 @@ class GetRandomAffirmationEntity extends AffirmationGeneratorEntityBase {
 
 
 
-  async load(this: any, reqmatch?: any, ctrl?: Control) {
+  async load(this: any, reqmatch?: GetRandomAffirmationLoadMatch, ctrl?: Control): Promise<GetRandomAffirmation> {
 
     const utility = this._utility
 
@@ -136,7 +140,9 @@ class GetRandomAffirmationEntity extends AffirmationGeneratorEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<GetRandomAffirmation> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }
