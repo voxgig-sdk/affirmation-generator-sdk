@@ -32,8 +32,9 @@ client = AffirmationGeneratorSDK.new
 
 ```ruby
 begin
-  result = client.getrandomaffirmation.load({ "id" => "example_id" })
-  puts result
+  # load returns the bare GetRandomAffirmation record (raises on error).
+  getrandomaffirmation = client.GetRandomAffirmation.load({ "id" => "example_id" })
+  puts getrandomaffirmation
 rescue => err
   warn "load failed: #{err}"
 end
@@ -80,13 +81,17 @@ end
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```ruby
-client = AffirmationGeneratorSDK.test
+client = AffirmationGeneratorSDK.test({
+  "entity" => { "getrandomaffirmation" => { "test01" => { "id" => "test01" } } },
+})
 
-result = client.getrandomaffirmation.load({ "id" => "test01" })
-# result contains mock response data
+# load returns the bare mock record (raises on error).
+getrandomaffirmation = client.GetRandomAffirmation.load({ "id" => "test01" })
+puts getrandomaffirmation
 ```
 
 ### Use a custom fetch function
@@ -218,7 +223,7 @@ API path: `/`
 
 ### GetRandomAffirmation
 
-Create an instance: `const get_random_affirmation = client.get_random_affirmation`
+Create an instance: `get_random_affirmation = client.GetRandomAffirmation`
 
 #### Operations
 
@@ -234,8 +239,9 @@ Create an instance: `const get_random_affirmation = client.get_random_affirmatio
 
 #### Example: Load
 
-```ts
-const get_random_affirmation = await client.get_random_affirmation.load({ id: 'get_random_affirmation_id' })
+```ruby
+# load returns the bare GetRandomAffirmation record (raises on error).
+get_random_affirmation = client.GetRandomAffirmation.load({ "id" => "get_random_affirmation_id" })
 ```
 
 
@@ -310,7 +316,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```ruby
-getrandomaffirmation = client.getrandomaffirmation
+getrandomaffirmation = client.GetRandomAffirmation
 getrandomaffirmation.load({ "id" => "example_id" })
 
 # getrandomaffirmation.data_get now returns the loaded getrandomaffirmation data

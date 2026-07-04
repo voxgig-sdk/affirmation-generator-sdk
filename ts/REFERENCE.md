@@ -109,7 +109,7 @@ Alias for `AffirmationGeneratorSDK.test()`.
 ## GetRandomAffirmationEntity
 
 ```ts
-const get_random_affirmation = client.get_random_affirmation
+const get_random_affirmation = client.GetRandomAffirmation()
 ```
 
 ### Fields
@@ -125,7 +125,7 @@ const get_random_affirmation = client.get_random_affirmation
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.get_random_affirmation.load({ id: 'get_random_affirmation_id' })
+const result = await client.GetRandomAffirmation().load({ id: 'get_random_affirmation_id' })
 ```
 
 ### Common Methods

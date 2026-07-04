@@ -85,7 +85,7 @@ Prepare a fetch definition without sending the request. Returns the
 ## GetRandomAffirmationEntity
 
 ```php
-$get_random_affirmation = $client->get_random_affirmation();
+$get_random_affirmation = $client->GetRandomAffirmation();
 ```
 
 ### Fields
@@ -101,7 +101,7 @@ $get_random_affirmation = $client->get_random_affirmation();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->get_random_affirmation()->load(["id" => "get_random_affirmation_id"]);
+$result = $client->GetRandomAffirmation()->load(["id" => "get_random_affirmation_id"]);
 ```
 
 ### Common Methods

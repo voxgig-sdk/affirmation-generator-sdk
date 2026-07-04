@@ -220,25 +220,15 @@ class AffirmationGeneratorSDK:
         }
 
 
-    @property
-    def get_random_affirmation(self):
-        """Idiomatic facade: client.get_random_affirmation.list() / client.get_random_affirmation.load({"id": ...})."""
-        from entity.get_random_affirmation_entity import GetRandomAffirmationEntity
-        cached = getattr(self, "_get_random_affirmation", None)
-        if cached is None:
-            cached = GetRandomAffirmationEntity(self, None)
-            self._get_random_affirmation = cached
-        return cached
-
-    def GetRandomAffirmation(self, data=None):
-        # Deprecated: use client.get_random_affirmation instead.
+    def GetRandomAffirmation(self, data=None) -> "GetRandomAffirmationEntity":
+        """Entity factory: client.GetRandomAffirmation().list({}) / client.GetRandomAffirmation().load({"id": ...})."""
         from entity.get_random_affirmation_entity import GetRandomAffirmationEntity
         return GetRandomAffirmationEntity(self, data)
 
 
 
     @classmethod
-    def test(cls, testopts=None, sdkopts=None):
+    def test(cls, testopts=None, sdkopts=None) -> "AffirmationGeneratorSDK":
         if sdkopts is None:
             sdkopts = {}
         sdkopts = vs.clone(sdkopts)
@@ -258,3 +248,9 @@ class AffirmationGeneratorSDK:
         sdk.mode = "test"
 
         return sdk
+
+
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from entity.get_random_affirmation_entity import GetRandomAffirmationEntity

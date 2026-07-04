@@ -233,10 +233,10 @@ class AffirmationGeneratorSDK
 
     private $_get_random_affirmation = null;
 
-    // Idiomatic facade: $client->get_random_affirmation()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias GetRandomAffirmation() (PHP method
-    // names are case-insensitive).
-    public function get_random_affirmation($data = null)
+    // Canonical facade: $client->GetRandomAffirmation()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->get_random_affirmation()
+    // resolves here too.
+    public function GetRandomAffirmation($data = null)
     {
         require_once __DIR__ . '/entity/get_random_affirmation_entity.php';
         if ($data === null) {

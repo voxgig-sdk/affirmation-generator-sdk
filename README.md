@@ -26,9 +26,9 @@ import { AffirmationGeneratorSDK } from '@voxgig-sdk/affirmation-generator'
 
 const client = new AffirmationGeneratorSDK()
 
-// Load getrandomaffirmation data
-const getrandomaffirmation = await client.getrandomaffirmation.load({})
-console.log(getrandomaffirmation.data)
+// Load getrandomaffirmation data (returns a GetRandomAffirmation)
+const getrandomaffirmation = await client.GetRandomAffirmation().load()
+console.log(getrandomaffirmation)
 ```
 
 See the [TypeScript README](ts/README.md) for the full guide.
@@ -84,8 +84,8 @@ from affirmationgenerator_sdk import AffirmationGeneratorSDK
 client = AffirmationGeneratorSDK()
 
 
-# Load a specific getrandomaffirmation
-getrandomaffirmation = client.getrandomaffirmation.load({"id": "example_id"})
+# Load a specific getrandomaffirmation (returns the record, raises on error)
+getrandomaffirmation = client.GetRandomAffirmation().load({"id": "example_id"})
 print(getrandomaffirmation)
 ```
 
@@ -98,8 +98,8 @@ require_once 'affirmationgenerator_sdk.php';
 $client = new AffirmationGeneratorSDK();
 
 
-// Load a specific getrandomaffirmation
-$getrandomaffirmation = $client->getrandomaffirmation()->load(["id" => "example_id"]);
+// Load a specific getrandomaffirmation (returns the bare record; throws on error)
+$getrandomaffirmation = $client->GetRandomAffirmation()->load(["id" => "example_id"]);
 print_r($getrandomaffirmation);
 ```
 
@@ -123,8 +123,8 @@ require_relative "AffirmationGenerator_sdk"
 client = AffirmationGeneratorSDK.new
 
 
-# Load a specific getrandomaffirmation
-getrandomaffirmation = client.getrandomaffirmation.load({ "id" => "example_id" })
+# Load a specific getrandomaffirmation (returns the bare record; raises on error)
+getrandomaffirmation = client.GetRandomAffirmation.load({ "id" => "example_id" })
 puts getrandomaffirmation
 ```
 
@@ -137,7 +137,7 @@ local client = sdk.new()
 
 
 -- Load a specific getrandomaffirmation
-local getrandomaffirmation, err = client:getrandomaffirmation():load({ id = "example_id" })
+local getrandomaffirmation, err = client:GetRandomAffirmation():load({ id = "example_id" })
 print(getrandomaffirmation)
 ```
 
@@ -150,22 +150,27 @@ in-memory mock, so unit tests run offline.
 
 ```ts
 const client = AffirmationGeneratorSDK.test()
-const result = await client.getrandomaffirmation.load({ id: 'test01' })
-// result.ok === true, result.data contains mock data
+const getrandomaffirmation = await client.GetRandomAffirmation().load({ id: 'test01' })
+// getrandomaffirmation is a bare GetRandomAffirmation populated with mock data
+console.log(getrandomaffirmation)
 ```
 
 ### Python
 
 ```python
 client = AffirmationGeneratorSDK.test()
-result = client.getrandomaffirmation.load({"id": "test01"})
+getrandomaffirmation = client.GetRandomAffirmation().load({"id": "test01"})
+print(getrandomaffirmation)
 ```
 
 ### PHP
 
 ```php
-$client = AffirmationGeneratorSDK::test();
-$result = $client->getrandomaffirmation()->load(["id" => "test01"]);
+// Seed fixture data so offline calls resolve without a live server.
+$client = AffirmationGeneratorSDK::test([
+    "entity" => ["getrandomaffirmation" => ["test01" => ["id" => "test01"]]],
+]);
+$getrandomaffirmation = $client->GetRandomAffirmation()->load(["id" => "test01"]);
 ```
 
 ### Golang
@@ -180,15 +185,18 @@ result, err := client.GetRandomAffirmation(nil).Load(
 ### Ruby
 
 ```ruby
-client = AffirmationGeneratorSDK.test
-result = client.getrandomaffirmation.load({ "id" => "test01" })
+# Seed fixture data so offline calls resolve without a live server.
+client = AffirmationGeneratorSDK.test({
+  "entity" => { "getrandomaffirmation" => { "test01" => { "id" => "test01" } } },
+})
+getrandomaffirmation = client.GetRandomAffirmation.load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local result, err = client:getrandomaffirmation():load({ id = "test01" })
+local result, err = client:GetRandomAffirmation():load({ id = "test01" })
 ```
 
 ## How it works
@@ -236,6 +244,9 @@ const result = await client.direct({
   method: 'GET',
   params: { id: 'example' },
 })
+if (result instanceof Error) {
+  throw result
+}
 console.log(result.data)
 ```
 

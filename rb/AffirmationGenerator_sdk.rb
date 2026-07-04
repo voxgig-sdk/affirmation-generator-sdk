@@ -208,13 +208,7 @@ class AffirmationGeneratorSDK
   end
 
 
-  # Idiomatic facade: client.get_random_affirmation.list / client.get_random_affirmation.load({ "id" => ... })
-  def get_random_affirmation
-    require_relative 'entity/get_random_affirmation_entity'
-    @get_random_affirmation ||= GetRandomAffirmationEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.get_random_affirmation instead.
+  # Canonical facade: client.GetRandomAffirmation.list / client.GetRandomAffirmation.load({ "id" => ... })
   def GetRandomAffirmation(data = nil)
     require_relative 'entity/get_random_affirmation_entity'
     GetRandomAffirmationEntity.new(self, data)

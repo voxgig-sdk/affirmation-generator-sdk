@@ -80,7 +80,7 @@ Prepare a fetch definition without sending. Returns the `fetchdef` and raises on
 ## GetRandomAffirmationEntity
 
 ```python
-get_random_affirmation = client.get_random_affirmation
+get_random_affirmation = client.GetRandomAffirmation()
 ```
 
 ### Fields
@@ -96,7 +96,7 @@ get_random_affirmation = client.get_random_affirmation
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.get_random_affirmation.load({"id": "get_random_affirmation_id"})
+result = client.GetRandomAffirmation().load({"id": "get_random_affirmation_id"})
 ```
 
 ### Common Methods

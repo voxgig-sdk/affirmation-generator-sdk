@@ -204,14 +204,7 @@ class AffirmationGeneratorSDK {
 
 
 
-  _get_random_affirmation?: GetRandomAffirmationEntity
-
-  // Idiomatic facade: `client.get_random_affirmation.list()` / `client.get_random_affirmation.load({ id })`.
-  get get_random_affirmation(): GetRandomAffirmationEntity {
-    return (this._get_random_affirmation ??= new GetRandomAffirmationEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.get_random_affirmation` instead. */
+  // Entity access: `client.GetRandomAffirmation().list()` / `client.GetRandomAffirmation().load({ id })`.
   GetRandomAffirmation(data?: any) {
     const self = this
     return new GetRandomAffirmationEntity(self,data)

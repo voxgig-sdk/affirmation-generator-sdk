@@ -33,9 +33,10 @@ $client = new AffirmationGeneratorSDK();
 
 ```php
 try {
-    $result = $client->getrandomaffirmation()->load(["id" => "example_id"]);
-    print_r($result);
-} catch (\Exception $err) {
+    // load() returns the bare GetRandomAffirmation record (throws on error).
+    $getrandomaffirmation = $client->GetRandomAffirmation()->load(["id" => "example_id"]);
+    print_r($getrandomaffirmation);
+} catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
 }
 ```
@@ -81,13 +82,17 @@ print_r($fetchdef["headers"]);
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```php
-$client = AffirmationGeneratorSDK::test();
+$client = AffirmationGeneratorSDK::test([
+    "entity" => ["getrandomaffirmation" => ["test01" => ["id" => "test01"]]],
+]);
 
-$result = $client->getrandomaffirmation()->load(["id" => "test01"]);
-// $result contains mock response data
+// load() returns the bare mock record (throws on error).
+$getrandomaffirmation = $client->GetRandomAffirmation()->load(["id" => "test01"]);
+print_r($getrandomaffirmation);
 ```
 
 ### Use a custom fetch function
@@ -223,7 +228,7 @@ API path: `/`
 
 ### GetRandomAffirmation
 
-Create an instance: `const get_random_affirmation = client.get_random_affirmation`
+Create an instance: `$get_random_affirmation = $client->GetRandomAffirmation();`
 
 #### Operations
 
@@ -239,8 +244,9 @@ Create an instance: `const get_random_affirmation = client.get_random_affirmatio
 
 #### Example: Load
 
-```ts
-const get_random_affirmation = await client.get_random_affirmation.load({ id: 'get_random_affirmation_id' })
+```php
+// load() returns the bare GetRandomAffirmation record (throws on error).
+$get_random_affirmation = $client->GetRandomAffirmation()->load(["id" => "get_random_affirmation_id"]);
 ```
 
 
@@ -315,7 +321,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```php
-$getrandomaffirmation = $client->getrandomaffirmation();
+$getrandomaffirmation = $client->GetRandomAffirmation();
 $getrandomaffirmation->load(["id" => "example_id"]);
 
 // $getrandomaffirmation->dataGet() now returns the loaded getrandomaffirmation data

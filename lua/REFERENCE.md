@@ -83,7 +83,7 @@ same parameters as `direct()`.
 ## GetRandomAffirmationEntity
 
 ```lua
-local get_random_affirmation = client:get_random_affirmation(nil)
+local get_random_affirmation = client:GetRandomAffirmation(nil)
 ```
 
 ### Fields
@@ -99,7 +99,7 @@ local get_random_affirmation = client:get_random_affirmation(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:get_random_affirmation():load({ id = "get_random_affirmation_id" })
+local result, err = client:GetRandomAffirmation():load({ id = "get_random_affirmation_id" })
 ```
 
 ### Common Methods

@@ -33,10 +33,12 @@ client = AffirmationGeneratorSDK()
 
 ### 3. Load a getrandomaffirmation
 
+`load()` returns the bare record (a `dict`) and raises on error.
+
 ```python
 try:
-    result = client.getrandomaffirmation.load({"id": "example_id"})
-    print(result)
+    getrandomaffirmation = client.GetRandomAffirmation().load({"id": "example_id"})
+    print(getrandomaffirmation)
 except Exception as err:
     print(f"load failed: {err}")
 ```
@@ -84,8 +86,9 @@ Create a mock client for unit testing — no server required:
 ```python
 client = AffirmationGeneratorSDK.test()
 
-result = client.getrandomaffirmation.load({"id": "test01"})
-# result contains mock response data
+# Entity ops return the bare record and raise on error.
+getrandomaffirmation = client.GetRandomAffirmation().load({"id": "test01"})
+# getrandomaffirmation contains the mock response record
 ```
 
 ### Use a custom fetch function
@@ -218,7 +221,7 @@ API path: `/`
 
 ### GetRandomAffirmation
 
-Create an instance: `const get_random_affirmation = client.get_random_affirmation`
+Create an instance: `get_random_affirmation = client.GetRandomAffirmation()`
 
 #### Operations
 
@@ -234,8 +237,8 @@ Create an instance: `const get_random_affirmation = client.get_random_affirmatio
 
 #### Example: Load
 
-```ts
-const get_random_affirmation = await client.get_random_affirmation.load({ id: 'get_random_affirmation_id' })
+```python
+get_random_affirmation = client.GetRandomAffirmation().load({"id": "get_random_affirmation_id"})
 ```
 
 
@@ -309,7 +312,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```python
-getrandomaffirmation = client.getrandomaffirmation
+getrandomaffirmation = client.GetRandomAffirmation()
 getrandomaffirmation.load({"id": "example_id"})
 
 # getrandomaffirmation.data_get() now returns the loaded getrandomaffirmation data
