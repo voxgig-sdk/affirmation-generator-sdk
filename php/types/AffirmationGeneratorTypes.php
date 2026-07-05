@@ -18,7 +18,7 @@ class GetRandomAffirmation
     public string $affirmation;
 }
 
-/** Match filter for GetRandomAffirmation#load (any subset of GetRandomAffirmation fields). */
+/** Request payload for GetRandomAffirmation#load. */
 class GetRandomAffirmationLoadMatch
 {
     public ?string $affirmation = null;

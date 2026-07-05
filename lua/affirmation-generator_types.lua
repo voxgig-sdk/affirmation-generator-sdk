@@ -10,6 +10,7 @@
 ---@field affirmation string
 
 ---@class GetRandomAffirmationLoadMatch
+---@field affirmation? string
 
 local M = {}
 

@@ -97,7 +97,7 @@ get_random_affirmation := client.GetRandomAffirmation(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `affirmation` | ``$STRING`` | Yes |  |
+| `affirmation` | `string` | Yes |  |
 
 ### Operations
 
@@ -106,7 +106,7 @@ get_random_affirmation := client.GetRandomAffirmation(nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.GetRandomAffirmation(nil).Load(map[string]any{"id": "get_random_affirmation_id"}, nil)
+result, err := client.GetRandomAffirmation(nil).Load(nil, nil)
 ```
 
 ### Common Methods

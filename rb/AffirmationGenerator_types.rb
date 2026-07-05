@@ -17,7 +17,7 @@ GetRandomAffirmation = Struct.new(
   keyword_init: true
 )
 
-# Match filter for GetRandomAffirmation#load (any subset of GetRandomAffirmation fields).
+# Request payload for GetRandomAffirmation#load.
 #
 # @!attribute [rw] affirmation
 #   @return [String, nil]

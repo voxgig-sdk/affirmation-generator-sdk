@@ -116,7 +116,7 @@ const get_random_affirmation = client.GetRandomAffirmation()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `affirmation` | ``$STRING`` | Yes |  |
+| `affirmation` | `string` | Yes |  |
 
 ### Operations
 
@@ -125,7 +125,7 @@ const get_random_affirmation = client.GetRandomAffirmation()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.GetRandomAffirmation().load({ id: 'get_random_affirmation_id' })
+const result = await client.GetRandomAffirmation().load()
 ```
 
 ### Common Methods

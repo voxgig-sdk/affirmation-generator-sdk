@@ -8,7 +8,7 @@ Complete API reference for the AffirmationGenerator Ruby SDK.
 ### Constructor
 
 ```ruby
-require_relative 'affirmation-generator_sdk'
+require_relative 'AffirmationGenerator_sdk'
 
 client = AffirmationGeneratorSDK.new(options)
 ```
@@ -93,7 +93,7 @@ get_random_affirmation = client.GetRandomAffirmation
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `affirmation` | ``$STRING`` | Yes |  |
+| `affirmation` | `String` | Yes |  |
 
 ### Operations
 
@@ -102,7 +102,7 @@ get_random_affirmation = client.GetRandomAffirmation
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.GetRandomAffirmation.load({ "id" => "get_random_affirmation_id" })
+result = client.GetRandomAffirmation.load()
 ```
 
 ### Common Methods

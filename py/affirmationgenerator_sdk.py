@@ -221,7 +221,7 @@ class AffirmationGeneratorSDK:
 
 
     def GetRandomAffirmation(self, data=None) -> "GetRandomAffirmationEntity":
-        """Entity factory: client.GetRandomAffirmation().list({}) / client.GetRandomAffirmation().load({"id": ...})."""
+        """Entity factory: client.GetRandomAffirmation().list() / client.GetRandomAffirmation().load({"id": ...})."""
         from entity.get_random_affirmation_entity import GetRandomAffirmationEntity
         return GetRandomAffirmationEntity(self, data)
 

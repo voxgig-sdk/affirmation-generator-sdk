@@ -8,7 +8,7 @@ Complete API reference for the AffirmationGenerator Python SDK.
 ### Constructor
 
 ```python
-from affirmation-generator_sdk import AffirmationGeneratorSDK
+from affirmationgenerator_sdk import AffirmationGeneratorSDK
 
 client = AffirmationGeneratorSDK(options)
 ```
@@ -87,7 +87,7 @@ get_random_affirmation = client.GetRandomAffirmation()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `affirmation` | ``$STRING`` | Yes |  |
+| `affirmation` | `str` | Yes |  |
 
 ### Operations
 
@@ -96,7 +96,7 @@ get_random_affirmation = client.GetRandomAffirmation()
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.GetRandomAffirmation().load({"id": "get_random_affirmation_id"})
+result = client.GetRandomAffirmation().load()
 ```
 
 ### Common Methods

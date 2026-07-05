@@ -13,8 +13,7 @@ type GetRandomAffirmation struct {
 	Affirmation string `json:"affirmation"`
 }
 
-// GetRandomAffirmationLoadMatch mirrors the get_random_affirmation fields as an all-optional match
-// filter (Go analog of Partial<GetRandomAffirmation>).
+// GetRandomAffirmationLoadMatch is the typed request payload for GetRandomAffirmation.LoadTyped.
 type GetRandomAffirmationLoadMatch struct {
 	Affirmation *string `json:"affirmation,omitempty"`
 }

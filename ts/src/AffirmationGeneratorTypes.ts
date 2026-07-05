@@ -9,5 +9,7 @@ export interface GetRandomAffirmation {
   affirmation: string
 }
 
-export type GetRandomAffirmationLoadMatch = Partial<GetRandomAffirmation>
+export interface GetRandomAffirmationLoadMatch {
+  affirmation?: string
+}
 

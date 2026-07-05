@@ -90,7 +90,7 @@ local get_random_affirmation = client:GetRandomAffirmation(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `affirmation` | ``$STRING`` | Yes |  |
+| `affirmation` | `string` | Yes |  |
 
 ### Operations
 
@@ -99,7 +99,7 @@ local get_random_affirmation = client:GetRandomAffirmation(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:GetRandomAffirmation():load({ id = "get_random_affirmation_id" })
+local result, err = client:GetRandomAffirmation():load()
 ```
 
 ### Common Methods
