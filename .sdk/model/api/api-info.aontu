@@ -15,9 +15,9 @@ main: {
           url: "https://www.affirmations.dev"
         }
       ]
+      summary: "This API provides inspirational affirmations to boost positivity and self-esteem."
       title: "Affirmation Generator API"
       version: "1.0.0"
+      website: "https://affirmations.dev"
     }
   }
-}
-

@@ -90,7 +90,8 @@ same parameters as `Direct()`.
 ## GetRandomAffirmationEntity
 
 ```go
-get_random_affirmation := client.GetRandomAffirmation(nil)
+getRandomAffirmation := client.GetRandomAffirmation(nil)
+fmt.Println(getRandomAffirmation.GetName()) // "get_random_affirmation"
 ```
 
 ### Fields
@@ -107,6 +108,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.GetRandomAffirmation(nil).Load(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods

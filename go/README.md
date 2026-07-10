@@ -50,12 +50,12 @@ import (
 func main() {
     client := sdk.New()
 
-    // Load a single getrandomaffirmation — the value is the loaded record.
-    getrandomaffirmation, err := client.GetRandomAffirmation(nil).Load(nil, nil)
+    // Load a single getRandomAffirmation — the value is the loaded record.
+    getRandomAffirmation, err := client.GetRandomAffirmation(nil).Load(nil, nil)
     if err != nil {
         panic(err)
     }
-    fmt.Println(getrandomaffirmation)
+    fmt.Println(getRandomAffirmation)
 }
 ```
 
@@ -135,13 +135,13 @@ Create a mock client for unit testing — no server required:
 ```go
 client := sdk.Test()
 
-getrandomaffirmation, err := client.GetRandomAffirmation(nil).Load(
+getRandomAffirmation, err := client.GetRandomAffirmation(nil).Load(
     nil, nil,
 )
 if err != nil {
     panic(err)
 }
-fmt.Println(getrandomaffirmation) // the returned mock data
+fmt.Println(getRandomAffirmation) // the returned mock data
 ```
 
 ### Use a custom fetch function
@@ -245,9 +245,9 @@ Check `err` first, then use the value directly (or the typed
 `...Typed` variants, which return the entity's model struct and a typed
 slice):
 
-    getrandomaffirmation, err := client.GetRandomAffirmation(nil).Load(nil, nil)
+    getRandomAffirmation, err := client.GetRandomAffirmation(nil).Load(nil, nil)
     if err != nil { /* handle */ }
-    // getrandomaffirmation is the returned record
+    // getRandomAffirmation is the returned record
 
 Only `Direct()` returns a response envelope — a `map[string]any` with
 `"ok"`, `"status"`, `"headers"`, and `"data"` keys.
@@ -271,7 +271,7 @@ API path: `/`
 
 ### GetRandomAffirmation
 
-Create an instance: `get_random_affirmation := client.GetRandomAffirmation(nil)`
+Create an instance: `getRandomAffirmation := client.GetRandomAffirmation(nil)`
 
 #### Operations
 
@@ -288,11 +288,11 @@ Create an instance: `get_random_affirmation := client.GetRandomAffirmation(nil)`
 #### Example: Load
 
 ```go
-get_random_affirmation, err := client.GetRandomAffirmation(nil).Load(nil, nil)
+getRandomAffirmation, err := client.GetRandomAffirmation(nil).Load(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(get_random_affirmation) // the loaded record
+fmt.Println(getRandomAffirmation) // the loaded record
 ```
 
 
