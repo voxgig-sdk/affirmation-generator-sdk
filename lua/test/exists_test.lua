@@ -1,4 +1,4 @@
--- ProjectName SDK exists test
+-- AffirmationGenerator SDK exists test
 
 local sdk = require("affirmation-generator_sdk")
 
