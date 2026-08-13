@@ -16,11 +16,11 @@
 import pytest
 
 from projectname_sdk import AffirmationGeneratorSDK
-from core.error import AffirmationGeneratorError
-from core.result import AffirmationGeneratorResult
-from core.response import AffirmationGeneratorResponse
-from core.spec import AffirmationGeneratorSpec
-from feature.base_feature import AffirmationGeneratorBaseFeature
+from projectname_sdk.core.error import AffirmationGeneratorError
+from projectname_sdk.core.result import AffirmationGeneratorResult
+from projectname_sdk.core.response import AffirmationGeneratorResponse
+from projectname_sdk.core.spec import AffirmationGeneratorSpec
+from projectname_sdk.feature.base_feature import AffirmationGeneratorBaseFeature
 
 
 def _client():

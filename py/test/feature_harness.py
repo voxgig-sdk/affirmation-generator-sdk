@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import AffirmationGeneratorControl
-from core.error import AffirmationGeneratorError
-from core.result import AffirmationGeneratorResult
-from core.spec import AffirmationGeneratorSpec
+from affirmationgenerator_sdk.config import make_config
+from affirmationgenerator_sdk.features import _make_feature
+from affirmationgenerator_sdk.core.control import AffirmationGeneratorControl
+from affirmationgenerator_sdk.core.error import AffirmationGeneratorError
+from affirmationgenerator_sdk.core.result import AffirmationGeneratorResult
+from affirmationgenerator_sdk.core.spec import AffirmationGeneratorSpec
 
 
 # True when this SDK was generated with the named feature.

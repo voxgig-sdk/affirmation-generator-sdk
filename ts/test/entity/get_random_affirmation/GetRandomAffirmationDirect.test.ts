@@ -19,11 +19,15 @@ import {
 describe('GetRandomAffirmationDirect', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when AFFIRMATIONGENERATOR_TEST_LIVE=TRUE.
-  afterEach(liveDelay('AFFIRMATIONGENERATOR_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when AFFIRMATION_GENERATOR_TEST_LIVE=TRUE.
+  afterEach(liveDelay('AFFIRMATION_GENERATOR_TEST_LIVE'))
 
   test('direct-exists', async () => {
     const sdk = new AffirmationGeneratorSDK({
+      // Concrete base: a live construction must satisfy any server
+      // variables a templated base URL declares; overriding base with a
+      // literal (as the direct flow tests do) sidesteps the requirement.
+      base: 'http://localhost:8080',
       system: { fetch: async () => ({}) }
     })
     assert('function' === typeof sdk.direct)
@@ -72,17 +76,17 @@ function directSetup(mockres?: any) {
   const calls: any[] = []
 
   const env = envOverride({
-    'AFFIRMATIONGENERATOR_TEST_GET_RANDOM_AFFIRMATION_ENTID': {},
-    'AFFIRMATIONGENERATOR_TEST_LIVE': 'FALSE',
+    'AFFIRMATION_GENERATOR_TEST_GET_RANDOM_AFFIRMATION_ENTID': {},
+    'AFFIRMATION_GENERATOR_TEST_LIVE': 'FALSE',
   })
 
-  const live = 'TRUE' === env.AFFIRMATIONGENERATOR_TEST_LIVE
+  const live = 'TRUE' === env.AFFIRMATION_GENERATOR_TEST_LIVE
 
   if (live) {
     const client = new AffirmationGeneratorSDK({
     })
 
-    let idmap: any = env['AFFIRMATIONGENERATOR_TEST_GET_RANDOM_AFFIRMATION_ENTID']
+    let idmap: any = env['AFFIRMATION_GENERATOR_TEST_GET_RANDOM_AFFIRMATION_ENTID']
     if ('string' === typeof idmap && idmap.startsWith('{')) {
       idmap = JSON.parse(idmap)
     }

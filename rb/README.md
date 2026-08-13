@@ -34,7 +34,7 @@ client = AffirmationGeneratorSDK.new
 
 ```ruby
 begin
-  # load returns the bare GetRandomAffirmation record (raises on error).
+  # load returns the ENTITY — call data_get for the GetRandomAffirmation record (raises on error).
   getrandomaffirmation = client.GetRandomAffirmation.load()
   puts getrandomaffirmation
 rescue => err
@@ -117,7 +117,8 @@ Create a mock client for unit testing — no server required:
 ```ruby
 client = AffirmationGeneratorSDK.test
 
-# Entity ops return the bare mock record (raises on error).
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
 getrandomaffirmation = client.GetRandomAffirmation.load()
 puts getrandomaffirmation
 ```
@@ -264,7 +265,7 @@ Create an instance: `get_random_affirmation = client.GetRandomAffirmation`
 #### Example: Load
 
 ```ruby
-# load returns the bare GetRandomAffirmation record (raises on error).
+# load returns the ENTITY — call data_get for the GetRandomAffirmation record (raises on error).
 get_random_affirmation = client.GetRandomAffirmation.load()
 ```
 

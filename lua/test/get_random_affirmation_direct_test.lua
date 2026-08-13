@@ -60,11 +60,11 @@ function get_random_affirmation_direct_setup(mockres)
   local calls = {}
 
   local env = runner.env_override({
-    ["AFFIRMATIONGENERATOR_TEST_GET_RANDOM_AFFIRMATION_ENTID"] = {},
-    ["AFFIRMATIONGENERATOR_TEST_LIVE"] = "FALSE",
+    ["AFFIRMATION_GENERATOR_TEST_GET_RANDOM_AFFIRMATION_ENTID"] = {},
+    ["AFFIRMATION_GENERATOR_TEST_LIVE"] = "FALSE",
   })
 
-  local live = env["AFFIRMATIONGENERATOR_TEST_LIVE"] == "TRUE"
+  local live = env["AFFIRMATION_GENERATOR_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {

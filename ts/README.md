@@ -121,7 +121,8 @@ Create a mock client for unit testing — no server required:
 const client = AffirmationGeneratorSDK.test()
 
 const getrandomaffirmation = await client.GetRandomAffirmation().load()
-// getrandomaffirmation is a bare entity populated with mock response data
+// getrandomaffirmation is the entity, populated with mock response data
+// — call getrandomaffirmation.data() for the record itself
 console.log(getrandomaffirmation)
 ```
 

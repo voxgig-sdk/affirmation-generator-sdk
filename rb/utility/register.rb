@@ -24,6 +24,7 @@ require_relative 'prepare_method'
 require_relative 'prepare_params'
 require_relative 'prepare_path'
 require_relative 'prepare_query'
+require_relative 'graphql'
 require_relative 'result_basic'
 require_relative 'result_body'
 require_relative 'result_headers'
@@ -55,6 +56,8 @@ AffirmationGeneratorUtility.registrar = ->(u) {
   u.prepare_params = AffirmationGeneratorUtilities::PrepareParams
   u.prepare_path = AffirmationGeneratorUtilities::PreparePath
   u.prepare_query = AffirmationGeneratorUtilities::PrepareQuery
+  u.graphql_body = AffirmationGeneratorUtilities::GraphqlBody
+  u.graphql_errors = AffirmationGeneratorUtilities::GraphqlErrors
   u.result_basic = AffirmationGeneratorUtilities::ResultBasic
   u.result_body = AffirmationGeneratorUtilities::ResultBody
   u.result_headers = AffirmationGeneratorUtilities::ResultHeaders

@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from affirmationgenerator_sdk.utility.voxgig_struct import voxgig_struct as vs
 from affirmationgenerator_sdk import AffirmationGeneratorSDK
-from core import helpers
+from affirmationgenerator_sdk.core import helpers
 from test import runner
 
 
@@ -56,11 +56,11 @@ def _get_random_affirmation_direct_setup(mockres):
     calls = []
 
     env = runner.env_override({
-        "AFFIRMATIONGENERATOR_TEST_GET_RANDOM_AFFIRMATION_ENTID": {},
-        "AFFIRMATIONGENERATOR_TEST_LIVE": "FALSE",
+        "AFFIRMATION_GENERATOR_TEST_GET_RANDOM_AFFIRMATION_ENTID": {},
+        "AFFIRMATION_GENERATOR_TEST_LIVE": "FALSE",
     })
 
-    live = env.get("AFFIRMATIONGENERATOR_TEST_LIVE") == "TRUE"
+    live = env.get("AFFIRMATION_GENERATOR_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {

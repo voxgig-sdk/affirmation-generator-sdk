@@ -23,8 +23,8 @@ module AffirmationGeneratorTestRunner
   end
 
   def self.env_override(m)
-    live = getenv("AFFIRMATIONGENERATOR_TEST_LIVE")
-    override = getenv("AFFIRMATIONGENERATOR_TEST_OVERRIDE")
+    live = getenv("AFFIRMATION_GENERATOR_TEST_LIVE")
+    override = getenv("AFFIRMATION_GENERATOR_TEST_OVERRIDE")
 
     if live == "TRUE" || override == "TRUE"
       m.each_key do |key|
@@ -44,8 +44,8 @@ module AffirmationGeneratorTestRunner
       end
     end
 
-    explain = getenv("AFFIRMATIONGENERATOR_TEST_EXPLAIN")
-    m["AFFIRMATIONGENERATOR_TEST_EXPLAIN"] = explain if explain && !explain.empty?
+    explain = getenv("AFFIRMATION_GENERATOR_TEST_EXPLAIN")
+    m["AFFIRMATION_GENERATOR_TEST_EXPLAIN"] = explain if explain && !explain.empty?
 
     m
   end

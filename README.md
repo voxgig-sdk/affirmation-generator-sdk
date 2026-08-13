@@ -38,9 +38,18 @@ network, and no credentials:
 ### TypeScript
 
 ```ts
-const client = AffirmationGeneratorSDK.test()
+// The offline mock starts EMPTY — seed it with the records the test needs.
+// Shape: { entity: { <entity-name>: { <id>: <record> } } }
+const client = AffirmationGeneratorSDK.test({
+  entity: {
+    get_random_affirmation: {
+      test01: { id: 'test01' },
+    },
+  },
+})
 const getrandomaffirmation = await client.GetRandomAffirmation().load()
-// getrandomaffirmation is a bare GetRandomAffirmation populated with mock data
+// getrandomaffirmation is the GetRandomAffirmation entity, populated with mock data
+// — call getrandomaffirmation.data() for the record itself
 console.log(getrandomaffirmation)
 ```
 
@@ -182,7 +191,7 @@ require_once 'affirmationgenerator_sdk.php';
 $client = new AffirmationGeneratorSDK();
 
 
-// Load a specific getrandomaffirmation (returns the bare record; throws on error)
+// Load a specific getrandomaffirmation (returns the ENTITY; call data_get() for the record; throws on error)
 $getrandomaffirmation = $client->GetRandomAffirmation()->load();
 print_r($getrandomaffirmation);
 ```
@@ -210,7 +219,7 @@ require_relative "AffirmationGenerator_sdk"
 client = AffirmationGeneratorSDK.new
 
 
-# Load a specific getrandomaffirmation (returns the bare record; raises on error)
+# Load a specific getrandomaffirmation (returns the ENTITY; call data_get for the record)
 getrandomaffirmation = client.GetRandomAffirmation.load()
 puts getrandomaffirmation
 ```
@@ -344,6 +353,9 @@ Pass custom features via the `extend` option at construction time.
 
 This SDK is generated from the upstream OpenAPI specification. It is an
 unofficial client and is not affiliated with the API provider.
+
+The OpenAPI spec(s) this SDK was generated from are kept in the
+[`.sdk/def/`](.sdk/def/) folder.
 
 - Upstream API: [https://www.affirmations.dev/](https://www.affirmations.dev/)
 

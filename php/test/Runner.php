@@ -43,8 +43,8 @@ class AffirmationGeneratorTestRunner
 
     public static function env_override(array $m): array
     {
-        $live = self::getenv('AFFIRMATIONGENERATOR_TEST_LIVE');
-        $override = self::getenv('AFFIRMATIONGENERATOR_TEST_OVERRIDE');
+        $live = self::getenv('AFFIRMATION_GENERATOR_TEST_LIVE');
+        $override = self::getenv('AFFIRMATION_GENERATOR_TEST_OVERRIDE');
 
         if ($live === 'TRUE' || $override === 'TRUE') {
             foreach (array_keys($m) as $key) {
@@ -63,9 +63,9 @@ class AffirmationGeneratorTestRunner
             }
         }
 
-        $explain = self::getenv('AFFIRMATIONGENERATOR_TEST_EXPLAIN');
+        $explain = self::getenv('AFFIRMATION_GENERATOR_TEST_EXPLAIN');
         if ($explain !== null && $explain !== '') {
-            $m['AFFIRMATIONGENERATOR_TEST_EXPLAIN'] = $explain;
+            $m['AFFIRMATION_GENERATOR_TEST_EXPLAIN'] = $explain;
         }
 
         return $m;

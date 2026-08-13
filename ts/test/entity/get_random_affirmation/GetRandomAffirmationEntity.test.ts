@@ -26,8 +26,8 @@ import {
 describe('GetRandomAffirmationEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when AFFIRMATIONGENERATOR_TEST_LIVE=TRUE.
-  afterEach(liveDelay('AFFIRMATIONGENERATOR_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when AFFIRMATION_GENERATOR_TEST_LIVE=TRUE.
+  afterEach(liveDelay('AFFIRMATION_GENERATOR_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = AffirmationGeneratorSDK.test()
@@ -62,7 +62,7 @@ describe('GetRandomAffirmationEntity', async () => {
     // LOAD
     const get_random_affirmation_ref01_ent = client.GetRandomAffirmation()
     const get_random_affirmation_ref01_match_dt0: any = {}
-    const get_random_affirmation_ref01_data_dt0 = await get_random_affirmation_ref01_ent.load(get_random_affirmation_ref01_match_dt0)
+    const get_random_affirmation_ref01_data_dt0 = (await get_random_affirmation_ref01_ent.load(get_random_affirmation_ref01_match_dt0)).data()
     assert(null != get_random_affirmation_ref01_data_dt0)
 
 

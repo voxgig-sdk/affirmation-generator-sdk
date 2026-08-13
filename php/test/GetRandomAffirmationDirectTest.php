@@ -65,11 +65,11 @@ function get_random_affirmation_direct_setup($mockres)
     $calls = new \ArrayObject();
 
     $env = Runner::env_override([
-        "AFFIRMATIONGENERATOR_TEST_GET_RANDOM_AFFIRMATION_ENTID" => [],
-        "AFFIRMATIONGENERATOR_TEST_LIVE" => "FALSE",
+        "AFFIRMATION_GENERATOR_TEST_GET_RANDOM_AFFIRMATION_ENTID" => [],
+        "AFFIRMATION_GENERATOR_TEST_LIVE" => "FALSE",
     ]);
 
-    $live = $env["AFFIRMATIONGENERATOR_TEST_LIVE"] === "TRUE";
+    $live = $env["AFFIRMATION_GENERATOR_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [

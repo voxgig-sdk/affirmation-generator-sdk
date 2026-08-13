@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# AffirmationGenerator SDK exists test
 
 import pytest
 from affirmationgenerator_sdk import AffirmationGeneratorSDK
