@@ -14,7 +14,7 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from affirmationgenerator_sdk.config import make_config
+from affirmationgenerator_sdk.config import shared_config
 from affirmationgenerator_sdk.features import _make_feature
 from affirmationgenerator_sdk.core.control import AffirmationGeneratorControl
 from affirmationgenerator_sdk.core.error import AffirmationGeneratorError
@@ -24,7 +24,7 @@ from affirmationgenerator_sdk.core.spec import AffirmationGeneratorSpec
 
 # True when this SDK was generated with the named feature.
 def has_feature(name):
-    feature = make_config().get("feature")
+    feature = shared_config().get("feature")
     return isinstance(feature, dict) and feature.get(name) is not None
 
 

@@ -36,7 +36,7 @@ class Config {
 
 
   options = {
-    base: 'https://www.affirmations.dev',
+    base: "https://www.affirmations.dev",
 
     headers: {
       "content-type": "application/json"
@@ -55,11 +55,9 @@ class Config {
     "get_random_affirmation": {
       "fields": [
         {
-          "active": true,
           "name": "affirmation",
           "req": true,
-          "type": "`$STRING`",
-          "index$": 0
+          "type": "`$STRING`"
         }
       ],
       "name": "get_random_affirmation",
@@ -69,7 +67,6 @@ class Config {
           "name": "load",
           "points": [
             {
-              "active": true,
               "args": {},
               "kind": "http",
               "method": "GET",
@@ -79,11 +76,9 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 0
+              }
             }
-          ],
-          "key$": "load"
+          ]
         }
       },
       "relations": {

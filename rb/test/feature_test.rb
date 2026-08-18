@@ -15,7 +15,7 @@ require_relative "../AffirmationGenerator_sdk"
 module AffirmationGeneratorFeatureHarness
   # True when this SDK was generated with the named feature.
   def self.has_feature?(name)
-    f = AffirmationGeneratorConfig.make_config["feature"]
+    f = AffirmationGeneratorConfig.shared_config["feature"]
     f.is_a?(Hash) && !f[name].nil?
   end
 

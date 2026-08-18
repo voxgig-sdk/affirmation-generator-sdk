@@ -40,7 +40,7 @@ class AffirmationGeneratorSDK
         $utility = new AffirmationGeneratorUtility();
         $this->_utility = $utility;
 
-        $config = AffirmationGeneratorConfig::make_config();
+        $config = AffirmationGeneratorConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,

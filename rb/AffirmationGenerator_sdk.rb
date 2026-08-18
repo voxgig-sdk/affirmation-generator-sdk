@@ -28,7 +28,7 @@ class AffirmationGeneratorSDK
     utility = AffirmationGeneratorUtility.new
     @_utility = utility
 
-    config = AffirmationGeneratorConfig.make_config
+    config = AffirmationGeneratorConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,
