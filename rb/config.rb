@@ -19,6 +19,9 @@ module AffirmationGeneratorConfig
     {
       "main" => {
         "name" => "AffirmationGenerator",
+        "slug" => "affirmation-generator",
+        "version" => "0.0.1",
+        "target" => "rb",
       },
       "feature" => {
         "test" => {
@@ -42,6 +45,7 @@ module AffirmationGeneratorConfig
             {
               "name" => "affirmation",
               "req" => true,
+              "short" => "An inspirational affirmation message",
               "type" => "`$STRING`",
             },
           ],

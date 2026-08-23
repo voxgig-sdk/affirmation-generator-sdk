@@ -28,6 +28,9 @@ def make_config():
     return {
         "main": {
             "name": "AffirmationGenerator",
+            "slug": "affirmation-generator",
+            "version": "0.0.1",
+            "target": "py",
         },
         "feature": {
             "test": {
@@ -51,6 +54,7 @@ def make_config():
           {
             "name": "affirmation",
             "req": True,
+            "short": "An inspirational affirmation message",
             "type": "`$STRING`",
           },
         ],

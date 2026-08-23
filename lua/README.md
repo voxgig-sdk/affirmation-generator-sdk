@@ -225,7 +225,7 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `affirmation` |  |
+| `affirmation` | An inspirational affirmation message |
 
 Operations: Load.
 
@@ -250,7 +250,7 @@ Create an instance: `local get_random_affirmation = client:GetRandomAffirmation(
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `affirmation` | `string` |  |
+| `affirmation` | `string` | An inspirational affirmation message |
 
 #### Example: Load
 

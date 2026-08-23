@@ -245,7 +245,7 @@ On error, `ok` is `false` and `$err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `affirmation` |  |
+| `affirmation` | An inspirational affirmation message |
 
 Operations: Load.
 
@@ -270,7 +270,7 @@ Create an instance: `$get_random_affirmation = $client->GetRandomAffirmation();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `affirmation` | `string` |  |
+| `affirmation` | `string` | An inspirational affirmation message |
 
 #### Example: Load
 

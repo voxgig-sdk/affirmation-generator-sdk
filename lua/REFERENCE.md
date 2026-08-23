@@ -90,7 +90,7 @@ local get_random_affirmation = client:GetRandomAffirmation(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `affirmation` | `string` | Yes |  |
+| `affirmation` | `string` | Yes | An inspirational affirmation message |
 
 ### Operations
 

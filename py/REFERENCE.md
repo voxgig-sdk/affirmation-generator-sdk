@@ -87,7 +87,7 @@ get_random_affirmation = client.GetRandomAffirmation()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `affirmation` | `str` | Yes |  |
+| `affirmation` | `str` | Yes | An inspirational affirmation message |
 
 ### Operations
 

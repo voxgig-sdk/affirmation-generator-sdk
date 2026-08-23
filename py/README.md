@@ -241,7 +241,7 @@ On error, `ok` is `False` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `affirmation` |  |
+| `affirmation` | An inspirational affirmation message |
 
 Operations: Load.
 
@@ -266,7 +266,7 @@ Create an instance: `get_random_affirmation = client.GetRandomAffirmation()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `affirmation` | `str` |  |
+| `affirmation` | `str` | An inspirational affirmation message |
 
 #### Example: Load
 

@@ -7,6 +7,9 @@ local function make_config()
   return {
     main = {
       name = "AffirmationGenerator",
+      slug = "affirmation-generator",
+      version = "0.0.1",
+      target = "lua",
     },
     feature = {
       ["test"] = {
@@ -30,6 +33,7 @@ local function make_config()
           {
             ["name"] = "affirmation",
             ["req"] = true,
+            ["short"] = "An inspirational affirmation message",
             ["type"] = "`$STRING`",
           },
         },

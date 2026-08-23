@@ -98,7 +98,7 @@ fmt.Println(getRandomAffirmation.GetName()) // "get_random_affirmation"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `affirmation` | `string` | Yes |  |
+| `affirmation` | `string` | Yes | An inspirational affirmation message |
 
 ### Operations
 

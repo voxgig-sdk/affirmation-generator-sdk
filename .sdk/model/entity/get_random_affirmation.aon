@@ -8,6 +8,7 @@ main: kit: entity: get_random_affirmation: {
     {
       name: "affirmation"
       req: true
+      short: "An inspirational affirmation message"
       type: "`$STRING`"
     }
   ]

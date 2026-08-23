@@ -33,6 +33,9 @@ class AffirmationGeneratorConfig
         return [
             "main" => [
                 "name" => "AffirmationGenerator",
+                "slug" => "affirmation-generator",
+                "version" => "0.0.1",
+                "target" => "php",
             ],
             "feature" => [
                 "test" => [
@@ -56,6 +59,7 @@ class AffirmationGeneratorConfig
             [
               'name' => 'affirmation',
               'req' => true,
+              'short' => 'An inspirational affirmation message',
               'type' => '`$STRING`',
             ],
           ],

@@ -116,7 +116,7 @@ const get_random_affirmation = client.GetRandomAffirmation()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `affirmation` | `string` | Yes |  |
+| `affirmation` | `string` | Yes | An inspirational affirmation message |
 
 ### Operations
 
