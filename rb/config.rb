@@ -28,6 +28,7 @@ module AffirmationGeneratorConfig
           "options" => {
             "active" => false,
           },
+          "transport" => "base",
         },
       },
       "options" => {
