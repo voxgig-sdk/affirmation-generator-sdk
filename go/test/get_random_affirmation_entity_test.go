@@ -50,7 +50,7 @@ func TestGetRandomAffirmationEntity(t *testing.T) {
 		client := setup.client
 
 		// Bootstrap entity data from existing test data (no create step in flow).
-		getRandomAffirmationRef01DataRaw := vs.Items(core.ToMapAny(vs.GetPath("existing.get_random_affirmation", setup.data)))
+		getRandomAffirmationRef01DataRaw := vs.Items(core.ToMapAny(vs.GetPath(setup.data, "existing.get_random_affirmation")))
 		var getRandomAffirmationRef01Data map[string]any
 		if len(getRandomAffirmationRef01DataRaw) > 0 {
 			getRandomAffirmationRef01Data = core.ToMapAny(getRandomAffirmationRef01DataRaw[0][1])
@@ -97,7 +97,7 @@ func get_random_affirmationBasicSetup(extra map[string]any) *entityTestSetup {
 	client := sdk.TestSDK(options, extra)
 
 	// Generate idmap via transform, matching TS pattern.
-	idmap := vs.Transform(
+	idmap, _ := vs.Transform(
 		[]any{"get_random_affirmation01", "get_random_affirmation02", "get_random_affirmation03"},
 		map[string]any{
 			"`$PACK`": []any{"", map[string]any{
@@ -125,10 +125,22 @@ func get_random_affirmationBasicSetup(extra map[string]any) *entityTestSetup {
 	}
 
 	if env["AFFIRMATION_GENERATOR_TEST_LIVE"] == "TRUE" {
+		// An empty map, not a nil one: Merge returns nil when its last entry
+		// is nil, and BasicSetup is normally called with no extras - so a
+		// bare nil silently discarded the apikey and server values below.
+		extraOpts := extra
+		if extraOpts == nil {
+			extraOpts = map[string]any{}
+		}
+
 		mergedOpts := vs.Merge([]any{
+			// liveClientOptions() FIRST, so the generated fields below win:
+			// sdk-test-control.json's test.client.options adds to the live
+			// client, it does not redirect it.
+			liveClientOptions(),
 			map[string]any{
 			},
-			extra,
+			extraOpts,
 		})
 		client = sdk.NewAffirmationGeneratorSDK(core.ToMapAny(mergedOpts))
 	}

@@ -91,6 +91,9 @@ def get_random_affirmation_basic_setup(extra)
 
   if env["AFFIRMATION_GENERATOR_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
+      # FIRST, so the generated fields below win: sdk-test-control.json's
+      # test.client.options adds to the live client, it does not redirect it.
+      Runner.live_client_options,
       {
       },
       extra || {},
