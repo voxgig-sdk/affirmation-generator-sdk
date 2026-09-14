@@ -778,7 +778,7 @@
             "registry": {
               "active": false,
               "name": "npm",
-              "package": "",
+              "package": "@voxgig-sdk/affirmation-generator-sdk",
               "state": "pending",
               "url": "https://registry.npmjs.org",
               "vault": {

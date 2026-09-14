@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { AffirmationGeneratorSDK } from '@voxgig-sdk/affirmation-generator'
+import { AffirmationGeneratorSDK } from '@voxgig-sdk/affirmation-generator-sdk'
 
 const client = new AffirmationGeneratorSDK()
 ```
@@ -401,7 +401,7 @@ affirmation-generator/
 Import the SDK from the package root:
 
 ```ts
-import { AffirmationGeneratorSDK } from '@voxgig-sdk/affirmation-generator'
+import { AffirmationGeneratorSDK } from '@voxgig-sdk/affirmation-generator-sdk'
 ```
 
 ### Entity state

@@ -105,7 +105,7 @@ local result, err = client:GetRandomAffirmation():load()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/affirmation-generator` | publish pending — [install from git tag](https://github.com/voxgig-sdk/affirmation-generator-sdk/releases) |
+| TypeScript | `@voxgig-sdk/affirmation-generator-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/affirmation-generator-sdk/releases) |
 | Python | `voxgig-sdk-affirmation-generator` | publish pending — [install from git tag](https://github.com/voxgig-sdk/affirmation-generator-sdk/releases) |
 | PHP | `voxgig-sdk/affirmation-generator` | publish pending — [install from git tag](https://github.com/voxgig-sdk/affirmation-generator-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/affirmation-generator-sdk/go` | `go get github.com/voxgig-sdk/affirmation-generator-sdk/go@latest` |
@@ -119,7 +119,7 @@ local result, err = client:GetRandomAffirmation():load()
 ### TypeScript
 
 ```ts
-import { AffirmationGeneratorSDK } from '@voxgig-sdk/affirmation-generator'
+import { AffirmationGeneratorSDK } from '@voxgig-sdk/affirmation-generator-sdk'
 
 const client = new AffirmationGeneratorSDK()
 
