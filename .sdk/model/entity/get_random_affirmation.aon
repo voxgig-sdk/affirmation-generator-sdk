@@ -19,6 +19,12 @@ main: kit: entity: get_random_affirmation: {
       name: "load"
       points: [
         {
+          contract: {
+            id: "GET /"
+            json: "{\"operationId\":\"getRandomAffirmation\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"example\":{\"affirmation\":\"You know more than you think\"},\"schema\":{\"properties\":{\"affirmation\":{\"description\":\"An inspirational affirmation message\",\"example\":\"You know more than you think\",\"type\":\"string\"}},\"required\":[\"affirmation\"],\"type\":\"object\"}}},\"description\":\"Successful response with a random affirmation\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "GET"
           orig: "/"
           transform: {

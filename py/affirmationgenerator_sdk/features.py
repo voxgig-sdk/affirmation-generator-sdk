@@ -1,12 +1,18 @@
 # AffirmationGenerator SDK feature factory
 
 from affirmationgenerator_sdk.feature.base_feature import AffirmationGeneratorBaseFeature
+from affirmationgenerator_sdk.feature.ratelimit_feature import AffirmationGeneratorRatelimitFeature
+from affirmationgenerator_sdk.feature.retry_feature import AffirmationGeneratorRetryFeature
 from affirmationgenerator_sdk.feature.test_feature import AffirmationGeneratorTestFeature
+from affirmationgenerator_sdk.feature.timeout_feature import AffirmationGeneratorTimeoutFeature
 
 
 _FEATURES = {
     "base": lambda: AffirmationGeneratorBaseFeature(),
+    "ratelimit": lambda: AffirmationGeneratorRatelimitFeature(),
+    "retry": lambda: AffirmationGeneratorRetryFeature(),
     "test": lambda: AffirmationGeneratorTestFeature(),
+    "timeout": lambda: AffirmationGeneratorTimeoutFeature(),
 }
 
 

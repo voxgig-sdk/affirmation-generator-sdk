@@ -4,7 +4,10 @@ declare(strict_types=1);
 // AffirmationGenerator SDK feature factory
 
 require_once __DIR__ . '/feature/BaseFeature.php';
+require_once __DIR__ . '/feature/RatelimitFeature.php';
+require_once __DIR__ . '/feature/RetryFeature.php';
 require_once __DIR__ . '/feature/TestFeature.php';
+require_once __DIR__ . '/feature/TimeoutFeature.php';
 
 
 class AffirmationGeneratorFeatures
@@ -14,8 +17,14 @@ class AffirmationGeneratorFeatures
         switch ($name) {
             case "base":
                 return new AffirmationGeneratorBaseFeature();
+            case "ratelimit":
+                return new AffirmationGeneratorRatelimitFeature();
+            case "retry":
+                return new AffirmationGeneratorRetryFeature();
             case "test":
                 return new AffirmationGeneratorTestFeature();
+            case "timeout":
+                return new AffirmationGeneratorTimeoutFeature();
             default:
                 return new AffirmationGeneratorBaseFeature();
         }
@@ -31,7 +40,10 @@ class AffirmationGeneratorFeatures
     {
         switch ($name) {
             case "base":
+            case "ratelimit":
+            case "retry":
             case "test":
+            case "timeout":
                 return true;
             default:
                 return false;
