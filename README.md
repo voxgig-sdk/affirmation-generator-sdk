@@ -105,12 +105,12 @@ local result, err = client:GetRandomAffirmation():load()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/affirmation-generator-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/affirmation-generator-sdk/releases) |
-| Python | `voxgig-sdk-affirmation-generator` | publish pending — [install from git tag](https://github.com/voxgig-sdk/affirmation-generator-sdk/releases) |
-| PHP | `voxgig-sdk/affirmation-generator` | publish pending — [install from git tag](https://github.com/voxgig-sdk/affirmation-generator-sdk/releases) |
+| TypeScript | `@voxgig-sdk/affirmation-generator-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/affirmation-generator-sdk/tags) |
+| Python | `voxgig-sdk-affirmation-generator` | publish pending — [install from git tag](https://github.com/voxgig-sdk/affirmation-generator-sdk/tags) |
+| PHP | `voxgig-sdk/affirmation-generator` | publish pending — [install from git tag](https://github.com/voxgig-sdk/affirmation-generator-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/affirmation-generator-sdk/go` | `go get github.com/voxgig-sdk/affirmation-generator-sdk/go@latest` |
-| Ruby | `voxgig-sdk-affirmation-generator` | publish pending — [install from git tag](https://github.com/voxgig-sdk/affirmation-generator-sdk/releases) |
-| Lua | `voxgig-sdk-affirmation-generator` | publish pending — [install from git tag](https://github.com/voxgig-sdk/affirmation-generator-sdk/releases) |
+| Ruby | `voxgig-sdk-affirmation-generator` | publish pending — [install from git tag](https://github.com/voxgig-sdk/affirmation-generator-sdk/tags) |
+| Lua | `voxgig-sdk-affirmation-generator` | publish pending — [install from git tag](https://github.com/voxgig-sdk/affirmation-generator-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/affirmation-generator-sdk/go-cli` | `go install github.com/voxgig-sdk/affirmation-generator-sdk/go-cli/cmd/affirmation-generator@latest` |
 | Go MCP server | `github.com/voxgig-sdk/affirmation-generator-sdk/go-mcp` | `go get github.com/voxgig-sdk/affirmation-generator-sdk/go-mcp@latest` |
 

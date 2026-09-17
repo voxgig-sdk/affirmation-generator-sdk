@@ -127,9 +127,9 @@ class Config {
 
     entity: {
       
-      get_random_affirmation: {
-      },
-
+        get_random_affirmation: {
+        },
+  
     }
   }
 
