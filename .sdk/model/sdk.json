@@ -24,21 +24,88 @@
         "repr": "auto"
       },
       "contributor": {},
+      "doc": {
+        "active": true,
+        "assets": {
+          "path": ".sdk/doc/assets"
+        },
+        "brand": {
+          "label": "",
+          "notice": "",
+          "shortNotice": "",
+          "url": ""
+        },
+        "ci": {
+          "active": true,
+          "branch": "main"
+        },
+        "content": {
+          "path": ".sdk/doc/content"
+        },
+        "edition": {
+          "summary": {
+            "active": true,
+            "base": "node_modules/@voxgig/docgen/project/.sdk",
+            "brand": {},
+            "filter": {
+              "entities": [],
+              "features": [],
+              "targets": []
+            },
+            "kind": "summary",
+            "name": "summary",
+            "origname": "",
+            "output": {
+              "path": "SUMMARY.md"
+            },
+            "package": "@voxgig/docgen",
+            "published": false,
+            "site": {
+              "active": true
+            },
+            "style": {},
+            "title": ""
+          }
+        },
+        "qa": {
+          "vocabulary": []
+        },
+        "style": {
+          "color": {
+            "accent": "#00c6d8",
+            "background": "#f5f5f9",
+            "darkBackground": "#0f1117",
+            "darkText": "#e6edf3",
+            "primary": "#e70042",
+            "text": "#0a0a0a"
+          },
+          "font": "Nunito, system-ui, sans-serif",
+          "fontFile": "",
+          "headingFont": "Nunito, system-ui, sans-serif",
+          "headingFontFile": "",
+          "logo": "",
+          "mode": "light",
+          "mono": "ui-monospace, monospace",
+          "monoFile": ""
+        },
+        "target": {}
+      },
       "entity": {
         "get_random_affirmation": {
           "active": true,
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "name": "affirmation",
-              "req": true,
-              "short": "An inspirational affirmation message",
-              "type": "`$STRING`"
+          "fields": {
+            "affirmation": {
+              "a": true,
+              "h": "Affirmation",
+              "n": "affirmation",
+              "r": true,
+              "sh": "An inspirational affirmation message",
+              "t": "`$STRING`"
             }
-          ],
+          },
           "name": "get_random_affirmation",
           "op": {
             "load": {
@@ -46,20 +113,20 @@
               "name": "load",
               "points": [
                 {
-                  "active": true,
-                  "args": {},
-                  "contract": {
+                  "a": true,
+                  "co": {
                     "id": "GET /",
-                    "json": "{\"operationId\":\"getRandomAffirmation\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"example\":{\"affirmation\":\"You know more than you think\"},\"schema\":{\"properties\":{\"affirmation\":{\"description\":\"An inspirational affirmation message\",\"example\":\"You know more than you think\",\"type\":\"string\"}},\"required\":[\"affirmation\"],\"type\":\"object\"}}},\"description\":\"Successful response with a random affirmation\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"securitySource\":\"unspecified\"}",
                     "source": "openapi3",
-                    "version": 1
+                    "version": 2
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/",
-                  "segments": [],
-                  "select": {},
-                  "transform": {
+                  "g": {},
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/",
+                  "q": {},
+                  "r": {},
+                  "s": [],
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
@@ -488,17 +555,17 @@
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {
+              "a": true,
+              "d": {},
+              "i": {
                 "ref": "get_random_affirmation_ref01",
                 "srcdatavar": "get_random_affirmation_ref01_data",
                 "suffix": "_dt0"
               },
-              "match": {},
-              "op": "load",
-              "spec": [],
-              "valid": [
+              "m": {},
+              "o": "load",
+              "s": [],
+              "v": [
                 {
                   "apply": "TextFieldMark",
                   "def": {

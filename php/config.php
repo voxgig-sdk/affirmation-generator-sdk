@@ -113,9 +113,10 @@ class AffirmationGeneratorConfig
           'fields' => [
             [
               'name' => 'affirmation',
+              'title' => 'Affirmation',
+              'type' => '`$STRING`',
               'req' => true,
               'short' => 'An inspirational affirmation message',
-              'type' => '`$STRING`',
             ],
           ],
           'name' => 'get_random_affirmation',
@@ -125,17 +126,18 @@ class AffirmationGeneratorConfig
               'name' => 'load',
               'points' => [
                 [
-                  'args' => [],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/',
                   'segments' => [],
-                  'select' => [],
+                  'parts' => [],
+                  'rename' => [],
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
                   ],
-                  'parts' => [],
+                  'args' => [],
+                  'select' => [],
                 ],
               ],
             ],

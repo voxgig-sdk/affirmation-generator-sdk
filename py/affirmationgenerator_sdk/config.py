@@ -116,9 +116,10 @@ def make_config():
         "fields": [
           {
             "name": "affirmation",
+            "title": "Affirmation",
+            "type": "`$STRING`",
             "req": True,
             "short": "An inspirational affirmation message",
-            "type": "`$STRING`",
           },
         ],
         "name": "get_random_affirmation",
@@ -128,17 +129,18 @@ def make_config():
             "name": "load",
             "points": [
               {
-                "args": {},
                 "kind": "http",
                 "method": "GET",
                 "orig": "/",
                 "segments": [],
-                "select": {},
+                "parts": [],
+                "rename": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "parts": [],
+                "args": {},
+                "select": {},
               },
             ],
           },
